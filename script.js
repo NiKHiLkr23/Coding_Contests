@@ -35,8 +35,12 @@ response.then((v) => {
 
     let image = document.querySelectorAll("img[src='...']")
     for (let iterator = 0; iterator < image.length; iterator++) {
-
+        if (!contests[iterator].site in imagegallery){
+        image[iterator].src = "images/random.png"
+        }
+        else{
         image[iterator].src = imagegallery[contests[iterator].site]
+        }
 
     }
 
